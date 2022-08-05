@@ -26,6 +26,7 @@ ul {
 }
 h1,
 h4,
+h5,
 p {
   text-align: center;
 }
@@ -40,4 +41,5 @@ p {
 button {
   padding: 1em 2em;
   margin: 1em 2em;
+  /* text-align: center; */
 }

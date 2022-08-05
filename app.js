@@ -92,7 +92,6 @@ function setGameOver() {
   document.body.appendChild(playAgain);
   playAgain.addEventListener("click", resetGame);
 }
-
 // Reset game function
 
 function resetGame() {
@@ -108,10 +107,6 @@ function resetGame() {
   paperBtn.disabled = false;
   scissorsBtn.disabled = false;
 }
-
-// ToDo
-
-// Add more basic styles
 
 // Creating a five round match
 
