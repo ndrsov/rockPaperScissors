@@ -2,6 +2,8 @@ let roundCounter = 0;
 let userPoints = 0;
 let winOrLose = "won";
 let playAgain;
+
+// Getting DOM elements
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
@@ -9,6 +11,8 @@ const scissorsBtn = document.querySelector("#scissors");
 const round = document.querySelector("#round");
 const score = document.querySelector("#score");
 const hand = document.querySelector("#hand");
+
+//User options
 
 rockBtn.addEventListener("click", () => {
   const playerSelection = "rock";
@@ -32,12 +36,12 @@ function getComputerChoice() {
   const options = ["rock", "paper", "scissors"];
   return (finalchoice = options[randomNumber]);
 }
+
 // Play a round using computer selection against user's
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   roundCounter++;
   round.textContent = `Round number ${roundCounter}`;
-  score.textContent = `You have ${userPoints} points`;
   // hand.textContent = `You played ${playerSelection} and the computer played ${computerSelection}`;
   //Checked points and round
 
@@ -65,7 +69,11 @@ function playRound(playerSelection, computerSelection) {
   } else {
     hand.textContent = "You didn't choose a valid option, try again";
   }
+
+  score.textContent = `You have ${userPoints} points`;
 }
+
+//Game over function
 
 function setGameOver() {
   rockBtn.disabled = true;
@@ -91,6 +99,11 @@ function resetGame() {
   paperBtn.disabled = false;
   scissorsBtn.disabled = false;
 }
+
+// ToDo
+// Check if you win or lose and printed correctly
+// Display what hand the computer played
+// Add more basic styles
 
 // Creating a five round match
 
