@@ -1,6 +1,6 @@
 let roundCounter = 0;
 let userPoints = 0;
-let winOrLose = "won";
+let computerPoints = 0;
 let playAgain;
 
 // Getting DOM elements
@@ -42,16 +42,12 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   roundCounter++;
   round.textContent = `Round number ${roundCounter}`;
-  // hand.textContent = `You played ${playerSelection} and the computer played ${computerSelection}`;
-  //Checked points and round
 
   //Check hand
-  if (roundCounter == 5) {
-    hand.textContent = `All rounds have been played, you ${winOrLose}`;
-    setGameOver();
-  } else if (playerSelection == computerSelection) {
+  if (playerSelection == computerSelection) {
     hand.textContent = `You've both chosen ${computerSelection} no one wins round, play again`;
   } else if (playerSelection == "rock" && computerSelection == "paper") {
+    computerPoints++;
     hand.textContent = `Computer played ${computerSelection}, paper beats rock, you lose this round.`;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
     userPoints++;
@@ -60,17 +56,29 @@ function playRound(playerSelection, computerSelection) {
     userPoints++;
     hand.textContent = `Computer played ${computerSelection}, paper beats rock, you win this round.`;
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
+    computerPoints++;
     hand.textContent = `Computer played ${computerSelection}, scissors beats paper, you lose this round.`;
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
     userPoints++;
     hand.textContent = `Computer played ${computerSelection}, scissors beats paper, you win this round.`;
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    computerPoints++;
     hand.textContent = `Computer played ${computerSelection}, rock beats scissors, you lose this round.`;
   } else {
     hand.textContent = "You didn't choose a valid option, try again";
   }
 
-  score.textContent = `You have ${userPoints} points`;
+  score.textContent = `You have ${userPoints} points.
+  Computer has ${computerPoints} points`;
+
+  //Check scores
+  if (computerPoints == 3) {
+    hand.textContent = `You lose, computer has ${computerPoints} points`;
+    setGameOver();
+  } else if (userPoints == 3) {
+    hand.textContent = `You have ${userPoints} points, you win`;
+    setGameOver();
+  }
 }
 
 //Game over function
@@ -90,6 +98,7 @@ function setGameOver() {
 function resetGame() {
   roundCounter = 0;
   userPoints = 0;
+  computerPoints = 0;
   const resetMessages = document.querySelectorAll(".messages p");
   for (const message of resetMessages) {
     message.textContent = "";
@@ -101,8 +110,7 @@ function resetGame() {
 }
 
 // ToDo
-// Check if you win or lose and printed correctly
-// Display what hand the computer played
+
 // Add more basic styles
 
 // Creating a five round match
