@@ -50,22 +50,22 @@ function playRound(playerSelection, computerSelection) {
     hand.textContent = `All rounds have been played, you ${winOrLose}`;
     setGameOver();
   } else if (playerSelection == computerSelection) {
-    hand.textContent = `You've both chosen ${computerSelection} no one wins, play again`;
+    hand.textContent = `You've both chosen ${computerSelection} no one wins round, play again`;
   } else if (playerSelection == "rock" && computerSelection == "paper") {
-    hand.textContent = `You lose, paper beats rock`;
+    hand.textContent = `Computer played ${computerSelection}, paper beats rock, you lose this round.`;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
     userPoints++;
-    hand.textContent = `You win, rock beats scissors`;
+    hand.textContent = `Computer played ${computerSelection}, rock beats scissors, you win this round.`;
   } else if (playerSelection == "paper" && computerSelection == "rock") {
     userPoints++;
-    hand.textContent = `You win, paper beats rock`;
+    hand.textContent = `Computer played ${computerSelection}, paper beats rock, you win this round.`;
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
-    hand.textContent = `You lose, scissors beats paper`;
+    hand.textContent = `Computer played ${computerSelection}, scissors beats paper, you lose this round.`;
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
     userPoints++;
-    hand.textContent = `You win, scissors beats paper`;
+    hand.textContent = `Computer played ${computerSelection}, scissors beats paper, you win this round.`;
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
-    hand.textContent = `You lose, rock beats scissors`;
+    hand.textContent = `Computer played ${computerSelection}, rock beats scissors, you lose this round.`;
   } else {
     hand.textContent = "You didn't choose a valid option, try again";
   }
