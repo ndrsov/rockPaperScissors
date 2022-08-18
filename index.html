@@ -6,20 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
   <body>
-    <h1>Rock Paper Scissors</h1>
-    <h4>Choose your hand to start playing</h4>
-    <h5>Earn 3 points to win</h5>
-    <div class="container">
-      <button id="rock">Rock</button>
-      <button id="paper">Paper</button>
-      <button id="scissors">Scissors</button>
-    </div>
-    <div class="messages">
-      <p id="hand"></p>
-      <p id="round"></p>
-      <p id="score"></p>
+    <div class="section has-text-centered">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
+            <h1 class="title is-size-1">Rock Paper Scissors</h1>
+            <h2 class="subtitle">Choose your hand to start playing</h2>
+            <p class="subtitle is-5">Earn 3 points to win</p>
+            <div id="buttons-container" class="section">
+              <button id="rock" class="button is-large is-link">Rock</button>
+              <button id="paper" class="button is-large is-link">Paper</button>
+              <button id="scissors" class="button is-large is-link">
+                Scissors
+              </button>
+            </div>
+            <div class="messages section is-size-5">
+              <p id="hand"></p>
+              <p id="round"></p>
+              <p id="score"></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
