@@ -7,6 +7,7 @@ let playAgain;
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
+const container = document.querySelector(".container");
 
 const round = document.querySelector("#round");
 const score = document.querySelector("#score");
@@ -89,7 +90,7 @@ function setGameOver() {
   scissorsBtn.disabled = true;
   playAgain = document.createElement("button");
   playAgain.textContent = "Play again";
-  document.body.appendChild(playAgain);
+  container.appendChild(playAgain);
   playAgain.addEventListener("click", resetGame);
 }
 // Reset game function
